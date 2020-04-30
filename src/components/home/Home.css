@@ -1,0 +1,28 @@
+.Home-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeAddress {
+    margin: 2% 0;
+    font-weight: bold;
+    background-color: #2D315E;
+    padding: 2rem;
+    width: 1100px;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+#homeImage {
+    width: 1100px;
+    height: auto;
+    border: 5px solid #2D315E;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.footer{
+    text-align: center;
+  }

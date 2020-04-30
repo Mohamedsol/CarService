@@ -4,6 +4,7 @@ import NavBar from './components/shared/NavBar';
 import Car from './components/cars/Car';
 import Employee from './components/employee/Employee';
 import Auth from './components/auth/Auth';
+import Home from './components/home/Home';
 
 import {
   BrowserRouter as Router,
@@ -19,9 +20,11 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
-        <Route path="/car" exact><Car /></Route>
+        <Route path="/" exact><Home /></Route>
+        <Route path="/car" ><Car /></Route>
         <Route path="/employee" ><Employee /></Route>
         <Route path="/auth" ><Auth /></Route>
+        <Redirect to="/" />
       </Switch>
     </Router>
       
