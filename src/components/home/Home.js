@@ -9,6 +9,7 @@ const Home = () => {
     return (
         <React.Fragment>
           <div className="Home-body">
+          <img src={HomeImage} alt="Service Garage" id="homeImage"></img>
           <div id="homeAddress">
             Visit Us at the Nashville  Location
             <br />
@@ -18,7 +19,6 @@ const Home = () => {
             <br />Open from 8am-8pm
             <br />Email: info@CarService.com
           </div>
-          <img src={HomeImage} alt="Service Garage" id="homeImage"></img>
           <p className="footer">
             Copyright &copy;{new Date().getFullYear()}. All Rights Reserved By <b>Mohamed Soltani.</b>
           </p>
