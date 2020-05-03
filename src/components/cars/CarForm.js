@@ -72,7 +72,7 @@ class CarForm extends Component {
                             id="carModel"
                             placeholder=" Car Model..."
                         />
-                        <label htmlFor="carModel">Name</label>
+                        <label htmlFor="carModel">Model</label>
                         <input
                             className='textarea'
                             type="text"

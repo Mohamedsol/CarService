@@ -6,6 +6,8 @@ import Employee from './components/employee/Employee';
 import Auth from './components/auth/Auth';
 import Home from './components/home/Home';
 import CarForm from './components/cars/CarForm';
+import CarDetails from './components/cars/CarDetails';
+import CarEdit from './components/cars/CarEdit';
 
 import './index.css'
 
@@ -30,6 +32,13 @@ function App() {
         <Route path="/car/new" render={(props) => {
           return <CarForm {...props} /> }} />
         }} />
+        <Route path="/car/:carId/edit" render={(props) => {
+          return <CarEdit {...props} /> }} />
+        }} />
+        <Route path="/car/:carId" render={(props) => {
+          return <CarDetails {...props} /> }} />
+        }} />
+        
         <Route path="/car" render={(props) => {
           return <Car {...props} /> 
           }} />

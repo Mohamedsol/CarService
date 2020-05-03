@@ -18,9 +18,23 @@
     margin-top: 1rem;
 }
 
+.card-de{
+  width: 600px;
+  padding: .5em;
+  text-align: center;
+}
+
+.card-detlais{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
 .card-content {
     padding: .5em;
     text-align: center;
+    
     
 
 }
@@ -53,10 +67,22 @@
     border-radius: 2px;
     margin: .1em;
     width: 100%;
+    cursor: pointer;
   }
 
   .card .btn-details {
       background-color: #455BCA;
+      border: none;
+    color: cornsilk;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: .5em;
+    border-radius: 2px;
+    margin: .1em;
+    width: 100%;
+    cursor: pointer;
       
   }
 
