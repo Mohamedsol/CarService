@@ -11,7 +11,7 @@ class Employee extends Component {
         employees: []
     }
     componentDidMount() {
-        //get from EmployeeDB and hang on to that data; put it in state
+        //get employees Array from EmployeeDB and hang on to that data; put it in state
 
         axios.get('http://localhost:5002/employees')
         .then((response) => {
@@ -21,6 +21,7 @@ class Employee extends Component {
         })
     }
 
+    // Delete Employee
     deleteEmployee = id => {
         axios.delete('http://localhost:5002/employees/' + id).then(() => {
             axios.get('http://localhost:5002/employees')
@@ -28,7 +29,7 @@ class Employee extends Component {
                 this.setState({
                     employees: response.data,
                 })
-        })
+            })
         });     
     }
 

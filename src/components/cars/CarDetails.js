@@ -28,7 +28,8 @@ class CarDetails extends Component {
     
     deleteCar = () => {
         const carId = this.props.match.params.carId;
-        axios.delete('http://localhost:5002/cars/' + carId).then(() => {
+        axios.delete('http://localhost:5002/cars/' + carId)
+        .then(() => {
             this.props.history.push("/car")
         });     
     }

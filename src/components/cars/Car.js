@@ -26,7 +26,8 @@ class Car extends Component {
     }
 
     deleteCar = id => {
-        axios.delete('http://localhost:5002/cars/' + id).then(() => {
+        axios.delete('http://localhost:5002/cars/' + id)
+        .then(() => {
             this.Fetch()
         });     
     }
@@ -35,22 +36,22 @@ class Car extends Component {
         console.log('props', this.props)
         return ( 
             <React.Fragment>
-            <section className = "section-content" >
-                <button type="button" className="btn"
-                onClick={() => { this.props.history.push("/car/new") }}>
-                + Add Car
-                </button>
-            </section >
-            <div className="container-cards">
-            {this.state.cars.map(car => {
-                return  <CarItem  
-                id={car.id} 
-                model={car.model} 
-                image={car.image} 
-                description={car.description}
-                deleteCar={this.deleteCar}/> 
-             })}
-            </div>
+                <section className = "section-content" >
+                    <button type="button" className="btn"
+                    onClick={() => { this.props.history.push("/car/new") }}>
+                    + Add Car
+                    </button>
+                </section >
+                <div className="container-cards">
+                {this.state.cars.map(car => {
+                    return  <CarItem  
+                    id={car.id} 
+                    model={car.model} 
+                    image={car.image} 
+                    description={car.description}
+                    deleteCar={this.deleteCar}/> 
+                })}
+                </div>
             </React.Fragment>
          );
     }

@@ -15,7 +15,7 @@ class CarForm extends Component {
         loadingStatus: false
      }
 
-     componentDidMount() {
+    componentDidMount() {
         this.Fetch();
     }
 
@@ -29,15 +29,15 @@ class CarForm extends Component {
         })
     }
 
-     handleFieldChange = (e) => {
+    handleFieldChange = (e) => {
          const stateToChange= {};
          stateToChange[e.target.id] = e.target.value
          //the below function updates the state for every key press:
         this.setState(stateToChange)
         console.log(this.state)
-     }
+    }
 
-     // create a car and post it to json server
+     // create a car item and post it to json server
 
      createCar = e => {
          e.preventDefault();
