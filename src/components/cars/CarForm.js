@@ -50,7 +50,7 @@ class CarForm extends Component {
                 model: this.state.carModel,
                 description: this.state.description,
                 image: this.state.imageUrl,
-                employeeId: +this.state.employeeId
+                employeeId: this.state.employeeId
             };
             // Create (post request) the car and redirect user to car list
             axios.post('http://localhost:5002/cars', car)

@@ -19,7 +19,6 @@ class CarEdit extends Component {
         .then((response) => {
             this.setState({
                 employees: response.data,
-                employeeId: response.data[0].id
             })
         })
     }
@@ -32,8 +31,8 @@ class CarEdit extends Component {
                 imageUrl: response.data.image,
                 carModel: response.data.model,
                 description: response.data.description,
-                employeeId: response.data.employeeId,
-                id:response.data.id
+                employeeId: +response.data.employeeId,
+                id: response.data.id
             })
         })
     }
@@ -57,8 +56,9 @@ class CarEdit extends Component {
                 model: this.state.carModel,
                 description: this.state.description,
                 image: this.state.imageUrl,
-                employeeId: +this.state.employeeId
+                employeeId: Number(this.state.employeeId)
             };
+            console.log('car update',updateCar)
             
             // Create (post request) the car and redirect user to car list
             axios.put('http://localhost:5002/cars/' + this.state.id, updateCar)
