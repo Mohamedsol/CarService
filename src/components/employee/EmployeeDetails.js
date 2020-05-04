@@ -7,6 +7,7 @@ class EmployeeDetails extends Component {
 
     state = { 
         name:'',
+        img:'',
         cars:[]
      }
     
@@ -16,24 +17,32 @@ class EmployeeDetails extends Component {
         const employeeId = this.props.match.params.employeeId;
         axios.get(`http://localhost:5002/employees/${employeeId}/?_embed=cars`)
         .then((response) => {
-            console.log(response.data)
+        console.log(response.data)
           this.setState({
             name: response.data.name,
             cars: response.data.cars,
             loadingStatus: false
           });
         });
+
+        axios.get('https://randomuser.me/api/')
+        .then((response) => {
+            console.log(response.data)
+            this.setState({
+                img: response.data.results[0].picture.medium,
+            })
+        })
     }
     render() { 
         return ( 
             <div className="card " style={{ width: '1170px', marginLeft: '30px' }}>
                 <div className="card-content" >
                 <picture>
-                    <img src={require('./employee.png')} alt="Employee" />
+                    <img src={this.state.img} alt="Employee" />
                 </picture>
                     <h3>Employee: {this.state.name}</h3>
                     {/* <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Delete Employee</button> */}
-                    <h1 style={{ color: '#FF5498' }}> {`Cars that ${this.state.name} is working on :`}</h1>
+                    <h1 style={{ color: '#FF5498' }}> {`${this.state.name} is working on ${this.state.cars.length}`} { this.state.cars.length === 1 ? 'car': 'cars'}</h1>
                     <div className="container-cards">
                     {this.state.cars.map(car =>
                     <CarItem
